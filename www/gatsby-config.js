@@ -5,5 +5,13 @@
  */
 
 module.exports = {
-  plugins: ["gatsby-theme-dencic"],
+  plugins: [
+    {
+      resolve: "gatsby-theme-dencic",
+      options: {
+        siteTitle: "Web and Mobile Developer",
+        portfolioBasePath: "/portfolio", // default: /portfolio
+      }
+    }
+  ]
 }
