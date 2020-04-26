@@ -6,11 +6,12 @@ module.exports = options => ({
     social: [
       {
         url: `https://twitter.com/zarkoden`,
-        name: "Zarko Dencic"
-      }
-    ]
+        name: "Zarko Dencic",
+      },
+    ],
   },
   plugins: [
+    "gatsby-plugin-react-helmet",
     "gatsby-plugin-theme-ui",
     {
       resolve: "gatsby-source-filesystem",
@@ -26,6 +27,6 @@ module.exports = options => ({
         name: "content/portfolio",
       },
     },
-    "gatsby-transformer-yaml"
+    "gatsby-transformer-yaml",
   ],
 })

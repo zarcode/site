@@ -19,6 +19,7 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "@types/react-helmet": "^5.0.15",
     "gatsby": "^2.13.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
@@ -30,7 +31,11 @@
     "gatsby-plugin-theme-ui": "^0.2.2",
     "gatsby-source-filesystem": "^2.2.5",
     "gatsby-transformer-yaml": "^2.3.4",
-    "theme-ui": "^0.2.2"
+    "react-anchor-link-smooth-scroll": "^1.0.12",
+    "@styled-system/should-forward-prop": "^5.1.5",
+    "gatsby-plugin-react-helmet": "^3.1.2",
+    "theme-ui": "^0.2.2",
+    "react-helmet": "^5.2.1"
   },
   "keywords": [
     "gatsby",

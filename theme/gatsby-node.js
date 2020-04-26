@@ -1,23 +1,20 @@
 const fs = require("fs")
 const mkdirp = require("mkdirp")
 
-const {
-  createPortfolioType,
-} = require("./utils/types")
+const { createPortfolioType } = require("./utils/types")
 
 // Ensure that content directories exist
 exports.onPreBootstrap = ({ reporter }, themeOptions) => {
-
   const dirs = [
     "content/frontpage/about",
-    "content/portfolio"
+    "content/portfolio",
     // themeOptions.portfolioContentPath || "content/portfolio"
   ]
 
   dirs.forEach(dir => {
     reporter.info(`Initializing ${dir} directory`)
     if (!fs.existsSync(dir)) {
-        mkdirp.sync(dir)
+      mkdirp.sync(dir)
     }
   })
 }
@@ -37,26 +34,26 @@ exports.sourceNodes = ({ actions, schema }) => {
 }
 
 exports.createResolvers = ({ createResolvers }, options) => {
-  const basePath = options.basePath || '/';
+  const basePath = options.basePath || "/"
 
   // Quick-and-dirty helper to convert strings into URL-friendly slugs.
   const slugify = str => {
     const slug = str
       .toLowerCase()
-      .replace(/[^a-z0-9]+/g, '-')
-      .replace(/(^-|-$)+/g, '');
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)+/g, "")
 
-    return `/${basePath}/${slug}`.replace(/\/\/+/g, '/');
-  };
+    return `/${basePath}/${slug}`.replace(/\/\/+/g, "/")
+  }
 
   createResolvers({
     Portfolio: {
       slug: {
-        resolve: source => slugify(source.name)
-      }
-    }
-  });
-};
+        resolve: source => slugify(source.name),
+      },
+    },
+  })
+}
 
 exports.createPages = ({ actions, reporter }) => {
   reporter.warn("make sure to load data from somewhere!")

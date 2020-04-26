@@ -17,9 +17,9 @@
  *
  */
 
-import React from 'react';
-import Helmet from 'react-helmet';
-import { graphql, useStaticQuery } from 'gatsby';
+import React from "react"
+import Helmet from "react-helmet"
+import { graphql, useStaticQuery } from "gatsby"
 
 // interface HelmetProps {
 //   title: string;
@@ -50,11 +50,11 @@ const seoQuery = graphql`
       }
     }
   }
-`;
+`
 
 const themeUIDarkModeWorkaroundScript = [
   {
-    type: 'text/javascript',
+    type: "text/javascript",
     innerHTML: `
     (function() {
       try {
@@ -66,7 +66,7 @@ const themeUIDarkModeWorkaroundScript = [
     })();
   `,
   },
-];
+]
 
 const SEO = ({
   title,
@@ -78,80 +78,79 @@ const SEO = ({
   timeToRead,
   canonicalUrl,
 }) => {
-  const results = useStaticQuery(seoQuery);
-  const site = results.allSite.edges[0].node.siteMetadata;
-  const twitter = site.social.find(option => option.name === 'twitter') || {};
+  const results = useStaticQuery(seoQuery)
+  const site = results.allSite.edges[0].node.siteMetadata
+  const twitter = site.social.find(option => option.name === "twitter") || {}
 
-  const fullURL = (path: string) =>
-    path ? `${site.siteUrl}${path}` : site.siteUrl;
+  const fullURL = path => (path ? `${site.siteUrl}${path}` : site.siteUrl)
 
   // Checks if the source of the image is hosted on Contentful
-  if (`${image}`.includes('ctfassets')) {
-    image = `${image}`;
+  if (`${image}`.includes("ctfassets")) {
+    image = `${image}`
   } else {
-    image = fullURL(image);
+    image = fullURL(image)
   }
 
   // If no image is provided lets looks for a default site static image
-  image = image ? image : '/preview.png';
+  image = image ? image : "/preview.png"
 
   const metaTags = [
-    { charset: 'utf-8' },
+    { charset: "utf-8" },
     {
-      'http-equiv': 'X-UA-Compatible',
-      content: 'IE=edge',
+      "http-equiv": "X-UA-Compatible",
+      content: "IE=edge",
     },
     {
-      name: 'viewport',
-      content: 'width=device-width, initial-scale=1',
+      name: "viewport",
+      content: "width=device-width, initial-scale=1",
     },
     {
-      name: 'theme-color',
-      content: '#fff',
+      name: "theme-color",
+      content: "#fff",
     },
-    { itemprop: 'name', content: title || site.title },
-    { itemprop: 'description', content: description || site.description },
-    { itemprop: 'image', content: image },
-    { name: 'description', content: description || site.description },
+    { itemprop: "name", content: title || site.title },
+    { itemprop: "description", content: description || site.description },
+    { itemprop: "image", content: image },
+    { name: "description", content: description || site.description },
 
-    { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:site', content: site.name },
-    { name: 'twitter:title', content: title || site.title },
-    { name: 'twitter:description', content: description || site.description },
-    { name: 'twitter:creator', content: twitter.url },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:site", content: site.name },
+    { name: "twitter:title", content: title || site.title },
+    { name: "twitter:description", content: description || site.description },
+    { name: "twitter:creator", content: twitter.url },
     {
-      name: 'twitter:image',
+      name: "twitter:image",
       content: image,
     },
 
-    { property: 'og:title', content: title || site.title },
-    { property: 'og:url', content: site.siteUrl + pathname },
-    { property: 'og:image', content: image },
-    { property: 'og:description', content: description || site.description },
-    { property: 'og:site_name', content: site.title },
-    { property: 'og:type', content: 'website' },
-  ];
+    { property: "og:title", content: title || site.title },
+    { property: "og:url", content: site.siteUrl + pathname },
+    { property: "og:image", content: image },
+    { property: "og:description", content: description || site.description },
+    { property: "og:site_name", content: site.title },
+    { property: "og:type", content: "website" },
+  ]
 
   if (published) {
-    metaTags.push({ name: 'article:published_time', content: published });
+    metaTags.push({ name: "article:published_time", content: published })
   }
 
-//   if (timeToRead) {
-//     metaTags.push({ name: 'twitter:label1', value: 'Reading time' });
-//     metaTags.push({ name: 'twitter:data1', value: `${timeToRead} min read` });
-//   }
+  //   if (timeToRead) {
+  //     metaTags.push({ name: 'twitter:label1', value: 'Reading time' });
+  //     metaTags.push({ name: 'twitter:data1', value: `${timeToRead} min read` });
+  //   }
 
   return (
     <Helmet
       title={title || site.title}
-      htmlAttributes={{ lang: 'en' }}
-    //   script={themeUIDarkModeWorkaroundScript}
+      htmlAttributes={{ lang: "en" }}
+      //   script={themeUIDarkModeWorkaroundScript}
       meta={metaTags}
     >
       {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
       {children}
     </Helmet>
-  );
-};
+  )
+}
 
-export default SEO;
+export default SEO
