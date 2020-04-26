@@ -10,6 +10,7 @@ module.exports = {
       resolve: "gatsby-theme-dencic",
       options: {
         siteTitle: "Web and Mobile Developer",
+        siteDesc: "",
         portfolioBasePath: "/portfolio", // default: /portfolio
       }
     }

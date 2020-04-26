@@ -2,7 +2,7 @@
 
 const createPortfolioType = schema => {
   return schema.buildObjectType({
-    name: `PortfolioItem`,
+    name: `Portfolio`,
     fields: {
       id: { type: `ID!` },
       title: { type: `String!` },

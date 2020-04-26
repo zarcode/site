@@ -1,6 +1,14 @@
 module.exports = options => ({
   siteMetadata: {
     title: options.siteTitle || "Gatsby Theme",
+    description: options.siteDesc || "",
+    siteUrl: options.siteUrl || `https://zarcode.io`,
+    social: [
+      {
+        url: `https://twitter.com/zarkoden`,
+        name: "Zarko Dencic"
+      }
+    ]
   },
   plugins: [
     "gatsby-plugin-theme-ui",
@@ -14,8 +22,8 @@ module.exports = options => ({
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: options.portfolioContentPath || "content/portfolio",
-        name: options.portFolioContentPath || "content/portfolio",
+        path: "content/portfolio",
+        name: "content/portfolio",
       },
     },
     "gatsby-transformer-yaml"
