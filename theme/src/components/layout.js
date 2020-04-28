@@ -2,7 +2,13 @@ import React from "react"
 import { css, Global } from "@emotion/core"
 import styled from "@emotion/styled"
 import { graphql, useStaticQuery } from "gatsby"
-import { Layout as StyledLayout, Header, Main, Container, ThemeProvider } from "theme-ui"
+import {
+  Layout as StyledLayout,
+  Header,
+  Main,
+  Container,
+  ThemeProvider,
+} from "theme-ui"
 import AnchorLink from "react-anchor-link-smooth-scroll"
 import theme from "gatsby-plugin-theme-ui"
 
