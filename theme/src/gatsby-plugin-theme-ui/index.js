@@ -6,13 +6,16 @@
 export default {
   colors: {
     text: "#232129",
+    contentText: "#656565",
     background: "#fff",
     primary: "#fdbb07",
   },
   fonts: {
     default:
       "'-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI', 'Arial', sans-serif",
-    monospace: `"Operator Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
+    content: "'Quattrocento'",
+    monospace:
+      "'Operator Mono', Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace",
   },
   fontSizes: [12, 16, 18, 20, 22, 27, 56],
   lineHeights: {

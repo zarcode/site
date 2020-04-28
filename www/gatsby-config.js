@@ -12,7 +12,7 @@ module.exports = {
         siteTitle: "Web and Mobile Developer",
         siteDesc: "",
         portfolioBasePath: "/portfolio", // default: /portfolio
-      }
-    }
-  ]
+      },
+    },
+  ],
 }

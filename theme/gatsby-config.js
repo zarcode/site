@@ -28,5 +28,19 @@ module.exports = options => ({
       },
     },
     "gatsby-transformer-yaml",
+    {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: "Quattrocento",
+              variants: ["400"],
+              // strategy: 'selfHosted'
+            },
+          ],
+        },
+      },
+    },
   ],
 })

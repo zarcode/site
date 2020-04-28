@@ -92,7 +92,7 @@ const SEO = ({
   }
 
   // If no image is provided lets looks for a default site static image
-  image = image ? image : "/preview.png"
+  image = image ? image : "images/preview.png"
 
   const metaTags = [
     { charset: "utf-8" },
