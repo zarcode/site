@@ -11,6 +11,7 @@ const Box = styled("div", {
     boxSizing: "border-box",
     margin: 0,
     minWidth: 0,
+    flex: 1,
   },
   props => props.css
 )

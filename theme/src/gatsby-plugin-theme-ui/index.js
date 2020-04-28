@@ -14,13 +14,20 @@ export default {
       "'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI', 'Arial', sans-serif",
     monospace: `"Operator Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
   },
-  fontSizes: [12, 16, 18, 20, 22, 27, 36],
+  fontSizes: [12, 16, 18, 20, 22, 27, 56],
   lineHeights: {
     text: "1.45",
     heading: "1.1",
   },
   sizes: {
     container: 1040,
+  },
+  h2: {
+    likeH1: {
+      color: "text",
+      fontSize: 6,
+      lineHeight: "heading",
+    },
   },
   styles: {
     Layout: {
@@ -55,7 +62,7 @@ export default {
     },
     h1: {
       color: "text",
-      fontSize: 5,
+      fontSize: 6,
       lineHeight: "heading",
     },
     a: {
