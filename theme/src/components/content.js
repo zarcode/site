@@ -5,6 +5,7 @@ const Content = styled.p`
   font-family: ${props => props.theme.fonts.content};
   font-size: ${props => props.theme.fontSizes[1]}px;
   color: ${props => props.theme.colors.contentText};
+  font-weight: 400;
 `
 
 export default Content

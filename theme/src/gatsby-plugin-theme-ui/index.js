@@ -41,7 +41,7 @@ export default {
       lineHeight: "text",
     },
     Header: {
-      backgroundColor: "background",
+      display: "block",
       color: "text",
       fontWeight: "bold",
       margin: "0 auto",

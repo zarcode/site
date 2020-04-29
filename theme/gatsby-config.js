@@ -13,6 +13,8 @@ module.exports = options => ({
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-theme-ui",
+    "gatsby-image",
+    "gatsby-plugin-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
